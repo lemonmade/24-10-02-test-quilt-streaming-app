@@ -3,8 +3,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 import '@quilted/quilt/globals';
-import {hydrate} from 'preact';
-import {Browser, BrowserContext} from '@quilted/quilt/browser';
+import {hydrate} from '@quilted/quilt/browser';
 import {Router} from '@quilted/quilt/navigation';
 
 import type {AppContext} from '~/shared/context.ts';
@@ -16,19 +15,11 @@ if (document.readyState === 'loading') {
   );
 }
 
-const element = document.querySelector('#app')!;
-const browser = new Browser();
-
 const context = {
-  router: new Router(browser.request.url),
+  router: new Router(),
 } satisfies AppContext;
 
 // Makes key parts of the app available in the browser console
 Object.assign(globalThis, {app: context});
 
-hydrate(
-  <BrowserContext browser={browser}>
-    <App context={context} />
-  </BrowserContext>,
-  element,
-);
+hydrate(<App context={context} />);

@@ -19,12 +19,12 @@
     "start": "node ./build/server/server.js"
   },
   "devDependencies": {
-    "@quilted/quilt": "^0.8.4",
+    "@quilted/quilt": "^0.8.7",
     "@quilted/rollup": "^0.2.45",
     "@quilted/typescript": "^0.4.2",
     "@quilted/vite": "^0.1.27",
     "jsdom": "^24.0.0",
-    "preact": "^10.24.2",
+    "preact": "^10.24.3",
     "prettier": "^3.3.0",
     "react": "npm:@quilted/react@^18.2.0",
     "react-dom": "npm:@quilted/react-dom@^18.2.0",
