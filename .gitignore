@@ -4,6 +4,7 @@ node_modules/
 # Build outputs
 build/
 bin/
+dist/
 
 # Special operating system files
 .DS_STORE

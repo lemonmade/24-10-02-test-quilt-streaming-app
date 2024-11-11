@@ -4,6 +4,7 @@ import {
   ContentSecurityPolicy,
   SearchRobots,
   Viewport,
+  Title,
 } from '@quilted/quilt/server';
 
 import {renderApp} from '~/tests/render.ts';
@@ -11,6 +12,14 @@ import {renderApp} from '~/tests/render.ts';
 import {HTML} from './HTML.tsx';
 
 describe('<HTML />', () => {
+  it.only('sets the default title', async () => {
+    const head = await renderApp(<HTML />);
+
+    expect(head).toContainPreactComponent(Title, {
+      children: 'App',
+    });
+  });
+
   it('includes a responsive viewport tag', async () => {
     const head = await renderApp(<HTML />);
 
